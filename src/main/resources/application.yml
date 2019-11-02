@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: boogle-maps
+  h2:
+    console:
+      enabled: true
+      path: "/h2"
+  datasource:
+    url: "jdbc:h2:mem:vehicles"
+    driverClassName: "org.h2.Driver"
+    username: sa
+    password: sa
+
+external-services:
+  pricing:
+    endpoint: http://localhost:9002
+  maps:
+    endpoint: http://localhost:9003
+
+#Eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+instance:
+  preferIpAddress: true
+
+server:
+  port: 9003
+
